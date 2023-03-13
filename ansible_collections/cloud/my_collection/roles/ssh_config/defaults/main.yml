@@ -1,4 +1,0 @@
----
-sshd_config_file: /etc/ssh/sshd_config
-
-# defaults file for /home/ansible/cloud/roles/ssh_config

@@ -1,5 +1,0 @@
----
-ansible_check_mode: true
-
-
-# vars file for local_adm

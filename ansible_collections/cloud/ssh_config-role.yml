@@ -1,9 +1,0 @@
----
-- name: A role that ensure the ssh daemon has specific options configured on hosts. 
-  hosts: 192.168.198.129
-  become: true 
-  gather_facts: true
-
-  roles:
-    - role: ssh_config
-
