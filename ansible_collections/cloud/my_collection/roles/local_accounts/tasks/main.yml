@@ -1,0 +1,52 @@
+---
+- name: Create group 'local_adm'
+  ansible.builtin.group:
+    name: local_adm
+    state: present
+    system: yes
+  when: not ansible_check_mode
+
+- name: Create group 'local_log'
+  ansible.builtin.group:
+    name: local_log
+    state: present
+    system: yes
+  when: not ansible_check_mode
+
+- name: Add the user 'local_adm' with a specific uid and primary group of 'local_adm'
+  ansible.builtin.user:
+    name: local_adm
+    shell: /bin/bash
+    uid: 38000087
+    home: /home/local_adm
+    expires: -1
+    group: local_adm
+    append: no
+    state: present
+  when: not ansible_check_mode
+
+- name: Add the user 'local_log' with a specific uid and primary group of 'local_log'
+  ansible.builtin.user:
+    name: local_log
+    shell: /bin/sh
+    uid: 38000088
+    expires: "{{ ('2023-12-31 23:59:59'|to_datetime).strftime('%s') }}"
+    home: /home/local_log
+    group: local_log
+    append: no
+    state: present
+  when: not ansible_check_mode
+
+- name: Adding SSH key to authorized_keys
+  ansible.posix.authorized_key:
+    user: local_adm
+    state: present
+    key: "{{ lookup('file', '/home/ansible/.ssh/id_rsa.pub') }}"
+  when: not ansible_check_mode
+
+- name: Adding SSH key to authorized_keys
+  ansible.posix.authorized_key:
+    user: local_log
+    state: present
+    key: "{{ lookup('file', '/home/ansible/.ssh/id_rsa.pub') }}"
+  when: not ansible_check_mode
