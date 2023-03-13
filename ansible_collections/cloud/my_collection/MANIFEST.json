@@ -1,0 +1,30 @@
+{
+ "collection_info": {
+  "namespace": "cloud",
+  "name": "my_collection",
+  "version": "1.0.0",
+  "authors": [
+   "Ammar123"
+  ],
+  "readme": "README.md",
+  "tags": [],
+  "description": "This collection includes two roles for creating users with specific requirements on linux servers and for configuring SSHD service on hosts with specific options, such as",
+  "license": [
+   "MIT"
+  ],
+  "license_file": null,
+  "dependencies": {},
+  "repository": "https://github.com/bluesomania/cloud.ansible.git",
+  "documentation": "https://github.com/bluesomania/cloud.ansible/blob/main/README.md",
+  "homepage": "https://github.com/bluesomania/cloud.ansible",
+  "issues": "http://example.com/issue/tracker"
+ },
+ "file_manifest_file": {
+  "name": "FILES.json",
+  "ftype": "file",
+  "chksum_type": "sha256",
+  "chksum_sha256": "8d7f93a189916532e89c421224c319ea95c5bde2e3bd9476b3465cff58311662",
+  "format": 1
+ },
+ "format": 1
+}

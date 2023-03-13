@@ -1,0 +1,18 @@
+galaxy_info:
+  author: Ammar123
+  description: Ansible role to create users on Linux servers
+  license: MIT
+  version: 1.0.0 
+  min_ansible_version: 2.12
+
+  platforms:
+   - name: RedHat
+     versions:
+
+     - 8
+     - 9
+  galaxy_tags:
+
+    - system 
+    - users
+
