@@ -4,10 +4,20 @@ This collection contains two roles for setting up local user accounts,group acco
 
 Usage:
 
-ansible-galaxy collection install https:ansible-galaxy collection install git+https://github.com/bluesomania/cloud.ansible.git
+- git clone https://github.com/bluesomania/cloud.ansible.git
+
+- cd cloud.ansible
+
+- ansible-galaxy collection install cloud-my_collection-1.0.0.tar.gz 
+
+- git checkout ansible_collectionsv3/ansible_collectionsv2
+
+- cd cloud/my_collection/
+
+- ansible-galaxy collection install cloud-my_collection-1.0.0.tar.gz  
 
 
-ansible-galaxy collection install cloud.my_collection
+#This will install the cloud.my_collection collection on your local machine.
 
 License
 
