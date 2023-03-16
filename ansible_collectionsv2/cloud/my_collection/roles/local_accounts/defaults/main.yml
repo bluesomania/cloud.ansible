@@ -1,0 +1,31 @@
+# defaults file for my role 'local_accounts'
+
+# List of local groups to create
+
+local_groups:
+  - name: local_adm     # The name of the local group to create
+    system: yes         # Set to yes to create a system group 
+
+  - name: local_log     # The name of the local group to create
+    system: yes         # Set to yes to create a system group
+
+# List of local users to create
+
+local_users:
+  - name: local_adm     # The name of the local user to create
+    uid: 38000087       # The user ID for the local user
+    group: local_adm    # The name of the primary group for the user
+    expires: -1         # The expiration date for the user account
+    system: yes         # Set to yes to create a system user 
+
+  - name: local_log     # The name of the local user to create
+    uid: 38000088       # The user ID for the local user 
+    group: local_log    # The name of the primary group for the user
+    expires: "{{ ('2023-12-31 23:59:59'|to_datetime).strftime('%s') }}"  # The expiration date for the user account (The expires value is specified as a Unix timestamp, which is a numeric value representing the number of seconds since January 1, 1970, 00:00:00 UTC. The task uses the to_datetime filter to convert the specified date and time to a datetime object, and then uses strftime('%s') to convert it to a Unix timestamp.)
+    system: yes         # Set to yes to create a system user (optional)
+
+# Name of the user whose public key will be added to authorized_keys file. 
+ssh_user: ansible    #in this case i have used user ansible for demonstration purposes, any user here could be defined accordingly. 
+
+# Path to the SSH public key file
+ssh_public_key_path: "/home/{{ ssh_user }}/.ssh/id_rsa.pub"   #using ssh-keygen will create public key for the desired user in this path, in this case the ssh_user is ansible. 

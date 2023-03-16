@@ -1,0 +1,11 @@
+---
+
+  - name: Set SSHD config options
+    become: true
+    ansible.builtin.lineinfile:
+      path: "{{ sshd_config_file }}"
+      regexp: "^{{ item.name }}"
+      line: "{{ item.name }} {{ item.value }}"
+      state: present
+    loop: "{{ sshd_config_entries }}"
+    notify: restart sshd

@@ -1,0 +1,17 @@
+galaxy_info:
+  author: Ammar123
+  description: Ansible role to create users accounts,user groups on Linux servers and manage their SSH keys to allow passwordless authentication. 
+  license: MIT
+  version: "1.0.0" 
+  min_ansible_version: 2.12
+
+  platforms:
+   - name: RedHat
+     versions:
+
+     - 8
+     - 9
+  galaxy_tags:
+
+    - system 
+    - users

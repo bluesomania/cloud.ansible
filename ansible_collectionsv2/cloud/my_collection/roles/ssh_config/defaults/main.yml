@@ -1,0 +1,12 @@
+# This is a list of SSHD configuration options which defined as A list of dictionaries variable, to set using the `ansible.builtin.lineinfile` module. Each attribute in the list contains the `name` and `value` of the configuration option that will be set in the `sshd_config_file`.
+
+sshd_config_entries:
+  - name: "PasswordAuthentication"
+    value: "yes"
+  - name: "PermitEmptyPasswords"
+    value: "no"
+  - name: "PermitRootLogin"
+    value: "no"
+
+# This is the file path of the `sshd_config` file that will be updated with the new configuration options, this is the default file path for configuring sshd service. 
+sshd_config_file: "/etc/ssh/sshd_config"

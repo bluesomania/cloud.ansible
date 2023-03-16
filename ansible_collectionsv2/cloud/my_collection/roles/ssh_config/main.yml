@@ -1,0 +1,29 @@
+---
+    - name: Set PasswordAuthentication to yes
+      replace:
+        path: "{{ sshd_config_file }}"
+        regexp: "^#*PasswordAuthentication"
+        replace: "PasswordAuthentication yes"
+        backup: yes 
+
+    - name: Set PermitEmptyPasswords to no
+      replace:
+        path: "{{ sshd_config_file }}"
+        regexp: "^#*PermitEmptyPasswords"
+        replace: "PermitEmptyPasswords no"
+        backup: yes 
+
+    - name: Set PermitRootLogin to no
+      replace:
+        path: "{{ sshd_config_file }}"
+        regexp: "^#*PermitRootLogin"
+        replace: "PermitRootLogin no"
+        backup: yes 
+
+    - name: Restart SSH service
+      service:
+        name: sshd
+        state: restarted
+
+
+# tasks file for /home/ansible/cloud/roles/ssh_config
