@@ -34,7 +34,9 @@ license_file: ''
 
 # A list of tags you want to associate with the collection for indexing/searching. A tag name has the same character
 # requirements as 'namespace' and 'name'
-tags: []
+tags:
+  - users
+  - system 
 
 # Collections that this collection requires to be installed for it to be usable. The key of the dict is the
 # collection label 'namespace.name'. The value is a version range
@@ -46,7 +48,7 @@ dependencies: {}
 repository: https://github.com/bluesomania/cloud.ansible.git
 
 # The URL to any online docs
-documentation: https://github.com/bluesomania/cloud.ansible/blob/main/README.md
+documentation: https://github.com/bluesomania/cloud.ansible/blob/ansible_collectionsv3/ansible_collectionsv2/cloud/my_collection/README.md
 
 # The URL to the homepage of the collection/project
 homepage: https://github.com/bluesomania/cloud.ansible
