@@ -8,8 +8,6 @@ Usage:
 
 - cd cloud.ansible
 
-- ansible-galaxy collection install cloud-my_collection-1.0.0.tar.gz 
-
 - git checkout ansible_collectionsv3/ansible_collectionsv2
 
 - cd cloud/my_collection/
