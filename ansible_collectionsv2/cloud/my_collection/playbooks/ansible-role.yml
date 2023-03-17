@@ -10,8 +10,6 @@
       import_role:
         name: cloud.my_collection.local_accounts
 
-
-
     - name: ssh_config role
 
       import_role:
