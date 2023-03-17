@@ -1,5 +1,5 @@
 ---
-- name: Create users with specific userid and specific primary groups
+- name: Create users and group accounts with passworldess authentication and edit sshd service on target machines
   hosts: 192.168.198.130
   become: true 
   gather_facts: true
